@@ -194,13 +194,40 @@
         .highlight-bg {
             background: linear-gradient(135deg, rgba(124, 77, 255, 0.1), rgba(0, 229, 255, 0.05));
         }
+
+        .update-badge {
+            background: #ff0055;
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.65em;
+            font-weight: 800;
+            margin-left: 4px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <h1>2033 Semiconductor Roadmap: Great Shift Extended</h1>
-    <div class="subtitle">Comparative Analysis: 2023 Outlook vs. 2026 Reality vs. 2033 Logic Expansion</div>
+    <div class="subtitle">Comparative Analysis: 2023 Outlook vs. 2026 Reality vs. 2033 Logic Expansion <br><strong
+            style="color:var(--highlight);">(최신 업데이트: 2026년 2월 동향 반영)</strong></div>
 
     <div class="legend">
         <div class="legend-item">
@@ -252,8 +279,9 @@
                     <div class="tech-node view-2026">2nm Mass Prod (AI Driven)</div>
                 </td>
                 <td class="highlight-bg">
-                    <div class="tech-node view-2026">BSPDN Intro / 1.6nm Roadmapped</div>
-                    <div class="gap-analysis">▲ Power Delivery Critical</div>
+                    <div class="tech-node view-2026">2nm Mass Prod (TSMC/Sam) <span class="update-badge">UPDATED</span>
+                    </div>
+                    <div class="gap-analysis">▲ 1.4nm pushed to 2028+</div>
                 </td>
                 <td>
                     <div class="tech-node view-2023">2nm Maturity</div>
@@ -301,8 +329,8 @@
                     <div class="tech-node view-2026">HBM4 Sampling (16-Hi)</div>
                 </td>
                 <td class="highlight-bg">
-                    <div class="tech-node view-2026">HBM4 Mass Prod (Hybrid Bonding)</div>
-                    <div class="gap-analysis">▲ Accelerated 2yrs</div>
+                    <div class="tech-node view-2026">HBM4 Mass Prod (Q1-Q2) <span class="update-badge">HOT</span></div>
+                    <div class="gap-analysis">▲ HBM4E Early Sampling</div>
                 </td>
                 <td>
                     <div class="tech-node view-2023">HBM4 Planned</div>
@@ -429,8 +457,9 @@
                     <div class="tech-node view-2026">Glass Core Pilot Lines</div>
                 </td>
                 <td class="highlight-bg">
-                    <div class="tech-node view-2026">Glass Substrate Validated</div>
-                    <div class="gap-analysis">▲ Commercial Start!</div>
+                    <div class="tech-node view-2026">Glass Substrate Comm. Start <span class="update-badge">HOT</span>
+                    </div>
+                    <div class="gap-analysis">▲ T-Glass Bottleneck Expected</div>
                 </td>
                 <td>
                     <div class="tech-node view-2023">Glass R&D</div>
