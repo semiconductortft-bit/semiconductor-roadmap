@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2030 Top-Pick: Semiconductor Materials & Equipment Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f111a;
+            --card-bg: #1a1e2e;
+            --text-primary: #e6e6e6;
+            --text-secondary: #a0aec0;
+            --highlight: #00e5ff;
+            --glass-tech: #00c6ff;
+            --hbm-tech: #7c4dff;
+            --logic-tech: #ff0055;
+            --border-color: #2a2e45;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 24px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            background: linear-gradient(135deg, #fff, #a0aec0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 10px 0;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .tech-section {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            margin-right: 12px;
+        }
+
+        .glass-icon {
+            background: rgba(0, 198, 255, 0.1);
+            color: var(--glass-tech);
+        }
+
+        .hbm-icon {
+            background: rgba(124, 77, 255, 0.1);
+            color: var(--hbm-tech);
+        }
+
+        .logic-icon {
+            background: rgba(255, 0, 85, 0.1);
+            color: var(--logic-tech);
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.25em;
+        }
+
+        .company-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .company-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .company-item:hover {
+            transform: translateX(4px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .company-name {
+            font-weight: 700;
+            font-size: 1.05em;
+            color: #fff;
+        }
+
+        .company-role {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .stock-ticker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8em;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--highlight);
+        }
+
+        .key-tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .tag-glass {
+            background: rgba(0, 198, 255, 0.2);
+            color: var(--glass-tech);
+        }
+
+        .tag-hbm {
+            background: rgba(124, 77, 255, 0.2);
+            color: var(--hbm-tech);
+        }
+
+        .tag-logic {
+            background: rgba(255, 0, 85, 0.2);
+            color: var(--logic-tech);
+        }
+
+        .analysis-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--highlight);
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #d1d5db;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>2030 Alpha-Seeker Portfolio</h1>
+        <div class="subtitle">Top Beneficiaries in the New Semiconductor Era</div>
+    </div>
+
+    <div class="grid-container">
+        <!-- Sector 1: Glass Substrate -->
+        <div class="tech-section">
+            <div class="section-header">
+                <div class="icon-box glass-icon">💎</div>
+                <h2>Glass Substrate (Game Changer)</h2>
+            </div>
+            <ul class="company-list">
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">SKC (Absolics)</span>
+                        <span class="company-role">First-mover in Glass Core production (Georgia Plant)</span>
+                        <span class="key-tag tag-glass">Mass Prod 2026</span>
+                    </div>
+                    <span class="stock-ticker">KRX:011790</span>
+                </li>
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">Intel</span>
+                        <span class="company-role">Aggressive R&D targeting 2026-2027 adoption</span>
+                        <span class="key-tag tag-glass">IDM Leader</span>
+                    </div>
+                    <span class="stock-ticker">INTC</span>
+                </li>
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">Samsung Electro-Mech</span>
+                        <span class="company-role">Accelerating specialized glass substrate pilot lines</span>
+                        <span class="key-tag tag-glass">Fast Follower</span>
+                    </div>
+                    <span class="stock-ticker">KRX:009150</span>
+                </li>
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">Chemtronics</span>
+                        <span class="company-role">Glass Through Via (TGV) etching & supply chain</span>
+                        <span class="key-tag tag-glass">Key Supplier</span>
+                    </div>
+                    <span class="stock-ticker">KRX:080160</span>
+                </li>
+            </ul>
+            <div class="analysis-box">
+                <strong>💡 Kodari's Insight:</strong><br>
+                SKC is currently the only player with a commercial-ready timeline (Absolics). However, Samsung
+                Electro-Mechanics is rapidly catching up with existing multi-layer expertise. Watch strictly for yield
+                rates in 2H 2026.
+            </div>
+        </div>
+
+        <!-- Sector 2: HBM & Advanced Packaging -->
+        <div class="tech-section">
+            <div class="section-header">
+                <div class="icon-box hbm-icon">🚀</div>
+                <h2>HBM4 & Hybrid Bonding</h2>
+            </div>
+            <ul class="company-list">
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">Besi</span>
+                        <span class="company-role">Global leader in Hybrid Bonding equipment</span>
+                        <span class="key-tag tag-hbm">Monopoly-like</span>
+                    </div>
+                    <span class="stock-ticker">AMS:BESI</span>
+                </li>
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">Hanmi Semiconductor</span>
+                        <span class="company-role">TC Bonder dominance for HBM3E/HBM4</span>
+                        <span class="key-tag tag-hbm">Critical Tool</span>
+                    </div>
+                    <span class="stock-ticker">KRX:042700</span>
+                </li>
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">DISCO</span>
+                        <span class="company-role">Ultra-thin wafer grinding & dicing for stacks</span>
+                        <span class="key-tag tag-hbm">Essential Step</span>
+                    </div>
+                    <span class="stock-ticker">TYO:6146</span>
+                </li>
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">EO Technics</span>
+                        <span class="company-role">Laser Grooving & Stealth Dicing for thin wafers</span>
+                        <span class="key-tag tag-hbm">Yield Vital</span>
+                    </div>
+                    <span class="stock-ticker">KRX:039030</span>
+                </li>
+            </ul>
+            <div class="analysis-box">
+                <strong>💡 Kodari's Insight:</strong><br>
+                As HBM stack height increases (12-Hi → 16-Hi), purely thermal compression hits a limit.
+                <strong>Besi</strong> (Hybrid Bonding) becomes unavoidable for future generation. Hanmi remains strong
+                for current HBM3E/4 transition.
+            </div>
+        </div>
+
+        <!-- Sector 3: Logic & Materials -->
+        <div class="tech-section">
+            <div class="section-header">
+                <div class="icon-box logic-icon">⚡️</div>
+                <h2>Logic Scaling (<2nm) & Materials</h2>
+            </div>
+            <ul class="company-list">
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">ASML</span>
+                        <span class="company-role">High-NA EUV for 2nm and below</span>
+                        <span class="key-tag tag-logic">Gatekeeper</span>
+                    </div>
+                    <span class="stock-ticker">NASDAQ:ASML</span>
+                </li>
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">Applied Materials</span>
+                        <span class="company-role">GAA Transistor formation & Wiring equipment</span>
+                        <span class="key-tag tag-logic">Process King</span>
+                    </div>
+                    <span class="stock-ticker">AMAT</span>
+                </li>
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">Dongjin Semichem</span>
+                        <span class="company-role">EUV Photoresist & advanced chemical materials</span>
+                        <span class="key-tag tag-logic">Localization</span>
+                    </div>
+                    <span class="stock-ticker">KRX:005290</span>
+                </li>
+                <li class="company-item">
+                    <div class="company-info">
+                        <span class="company-name">Hansol Chemical</span>
+                        <span class="company-role">Precursors for ultra-fine deposition</span>
+                        <span class="key-tag tag-logic">Material Core</span>
+                    </div>
+                    <span class="stock-ticker">KRX:014680</span>
+                </li>
+            </ul>
+            <div class="analysis-box">
+                <strong>💡 Kodari's Insight:</strong><br>
+                With <strong>BSPDN</strong> (Backside Power Delivery), wafer thinning and backside processing get
+                complicated. Look for companies specializing in CMP (Chemical Mechanical Polishing) and new wiring
+                materials.
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
