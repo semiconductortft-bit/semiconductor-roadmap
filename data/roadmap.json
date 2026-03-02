@@ -1,0 +1,123 @@
+{
+  "title": "2033 Semiconductor Mega-Trend Roadmap: Great Shift Extended",
+  "subtitle": "Comparative Analysis: 2023 Outlook vs. 2026 Reality vs. 2033 Logic Expansion",
+  "updated": "2026-02",
+  "years": [2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033],
+  "highlightYear": 2026,
+  "sectors": [
+    {
+      "id": "logic",
+      "label": "LOGIC",
+      "rows": [
+        {
+          "label": "Process & Architecture",
+          "cells": {
+            "2023": { "view2023": "3nm FinFET (Yield Struggle)", "view2026": "3nm Stable, AI Chip Explosion" },
+            "2024": { "view2023": "3nm Optimized", "view2026": "2nm Risk Production" },
+            "2025": { "view2023": "2nm (GAA Intro)", "view2026": "2nm Mass Prod (AI Driven)" },
+            "2026": { "view2026": "2nm Mass Prod (TSMC/Sam) UPDATED", "gap": "▲ 1.4nm pushed to 2028+" },
+            "2027": { "view2023": "2nm Maturity", "view2026": "1.4nm (A14) Entry" },
+            "2028": { "view2023": "1.4nm R&D", "view2026": "1.4nm Mainstream" },
+            "2029": { "view2023": "Beyond Silicon?", "view2026": "1nm / Stacked CFET Intro" },
+            "2030": { "view2023": "Concept Phase", "view2026": "Sub-1nm Era" },
+            "2031": { "viewFuture": ["CFET Maturity", "Automated Design (AI-EDA)"] },
+            "2032": { "viewFuture": ["0.7nm (7Å) Node", "2D Materials (TMDs)"] },
+            "2033": { "viewFuture": ["Quantum-Dot / Neuromorphic Hybrid", "Post-Silicon Dominance"] }
+          }
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "label": "MEMORY",
+      "rows": [
+        {
+          "label": "HBM (AI Backbone)",
+          "cells": {
+            "2023": { "view2023": "HBM3 (Niche)" },
+            "2024": { "view2026": "HBM3E (Dominant)" },
+            "2025": { "view2023": "HBM3E Predicted", "view2026": "HBM4 Sampling (16-Hi)" },
+            "2026": { "view2026": "HBM4 Mass Prod (Q1-Q2) HOT", "gap": "▲ HBM4E Early Sampling" },
+            "2027": { "view2023": "HBM4 Planned", "view2026": "HBM4E / Custom HBM" },
+            "2028": { "view2023": "N/A", "view2026": "HBM5 (24-Hi/32-Hi)" },
+            "2029": { "view2023": "N/A", "view2026": "HBM5E" },
+            "2030": { "view2023": "HBM Gen?", "view2026": "HBM6 / Memory-Logic Fusion" },
+            "2031": { "viewFuture": ["HBM6E (Ultra-Low Power)"] },
+            "2032": { "viewFuture": ["HBM7 (Optical I/O Integ.)"] },
+            "2033": { "viewFuture": ["PIM-HBM Standard (Compute inside Memory)"] }
+          }
+        },
+        {
+          "label": "DRAM (GDDR/LPDDR)",
+          "cells": {
+            "2023": { "view2023": "LPDDR5X / GDDR6" },
+            "2024": { "view2026": "LPCAMM2 (Module Revolution)" },
+            "2025": { "view2023": "LPDDR6 R&D", "view2026": "GDDR7 Volume / LPDDR6" },
+            "2026": { "view2026": "On-Device AI Memory", "gap": "▲ LLM on Edge" },
+            "2027": { "view2023": "Generic Evolution", "view2026": "3D LPDDR (V-DRAM) Prototype" },
+            "2028": { "view2023": "N/A", "view2026": "3D DRAM Mass Prod" },
+            "2029": { "view2026": "PIM (Processing-in-Mem)" },
+            "2030": { "view2026": "Unified Memory Arch" },
+            "2031": { "viewFuture": ["3D DRAM Layer limit break"] },
+            "2032": { "viewFuture": ["Capacitor-less DRAM"] },
+            "2033": { "viewFuture": ["MRAM/ReRAM Substitution start"] }
+          }
+        },
+        {
+          "label": "HBF (High-Bandwidth Flash)",
+          "cells": {
+            "2023": { "view2023": "3D NAND (Storage)" },
+            "2024": { "view2026": "NVMe / CXL Memory Expand" },
+            "2025": { "view2023": "HBF Concept / R&D", "view2026": "Stacked NAND I/O Ramp" },
+            "2026": { "view2026": "HBF Trial (SK hynix / Sandisk)", "gap": "▲ 1.6 TB/s, 512GB stack" },
+            "2027": { "view2026": "HBF Commercial (AI Inference)" },
+            "2028": { "view2026": "HBF Volume / 400+ Layer NAND" },
+            "2029": { "view2026": "HBF Next Gen (Bandwidth ↑)" },
+            "2030": { "view2026": "HBF Ecosystem (Standard)" },
+            "2031": { "viewFuture": ["HBF Maturity / HBM Co-Pack"] },
+            "2032": { "viewFuture": ["Non-Volatile AI Memory Arch"] },
+            "2033": { "viewFuture": ["Memory-Storage Fusion (HBF Gen?)"] }
+          }
+        }
+      ]
+    },
+    {
+      "id": "pkg",
+      "label": "PKG",
+      "rows": [
+        {
+          "label": "Interposer (2.5D/3D)",
+          "cells": {
+            "2023": { "view2023": "CoWoS Shortage" },
+            "2024": { "view2026": "CoWoS-L / RDL Interposer" },
+            "2025": { "view2023": "Si-Interposer", "view2026": "Panel-Level Pkg (PLP)" },
+            "2026": { "view2026": "3D SoIC (Bumpless)", "gap": "▲ Hybrid Bonding" },
+            "2027": { "view2023": "Micro-bump", "view2026": "Multi-Die 3D Stacking" },
+            "2028": { "view2026": "Active Interposer" },
+            "2029": { "view2026": "Photonics (CPO) Integ." },
+            "2030": { "view2023": "Heterogeneous?", "view2026": "System-on-Package (SoP)" },
+            "2031": { "viewFuture": ["CPO (Co-Packaged Optics) Mainstream"] },
+            "2032": { "viewFuture": ["All-Optical Interconnect"] },
+            "2033": { "viewFuture": ["Wafer-Scale Integration (Standard)"] }
+          }
+        },
+        {
+          "label": "Substrate (Game Changer)",
+          "cells": {
+            "2023": { "view2023": "FC-BGA" },
+            "2024": { "view2026": "Fine-Pitch Organic" },
+            "2025": { "view2023": "ABF Dominance", "view2026": "Glass Core Pilot Lines" },
+            "2026": { "view2026": "Glass Substrate Comm. Start HOT", "gap": "▲ T-Glass Bottleneck Expected" },
+            "2027": { "view2023": "Glass R&D", "view2026": "Glass Substrate Mass Prod" },
+            "2028": { "view2026": "Glass Ecosystem Boom" },
+            "2029": { "view2026": "100x100mm+ Panel" },
+            "2030": { "view2023": "Unknown", "view2026": "Total Transition to Glass (AI)" },
+            "2031": { "viewFuture": ["Glass Interposer Fusion"] },
+            "2032": { "viewFuture": ["Active Glass Substrate"] },
+            "2033": { "viewFuture": ["Beyond Glass (Ceramic/Diamond?)"] }
+          }
+        }
+      ]
+    }
+  ]
+}

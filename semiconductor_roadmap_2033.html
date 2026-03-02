@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2033 Semiconductor Mega-Trend Roadmap: Great Shift Extended</title>
+            <style>
+        :root {
+            /* Light, Clean Corporate Colors */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --accent-color: #0284c7;
+            --secondary-color: #4f46e5;
+            --header-bg: #f1f5f9;
+            --row-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --old-view: #64748b;
+            --new-view: #0ea5e9;
+            --future-view: #d946ef;
+            --highlight: #e11d48;
+            --table-radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 30px 20px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0284c7, #4f46e5, #c026d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            padding: 0 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #475569;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: #ffffff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .table-wrapper {
+            background: var(--row-bg);
+            border-radius: var(--table-radius);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* Elegant light shadow */
+            border: 1px solid var(--border-color);
+            width: 100%;
+            /* 모바일에서 위아래 스크롤 시 헤더 고정을 위해 maxHeight와 overflow 추가 */
+            max-height: 75vh;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+        }
+
+        .roadmap-container {
+            width: 100%;
+            min-width: 1300px;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 14px;
+            vertical-align: top;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        th:last-child, td:last-child {
+            border-right: none;
+        }
+
+        th {
+            background-color: var(--header-bg);
+            padding: 20px 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            color: #334155;
+            box-shadow: 0 1px 0 var(--border-color);
+        }
+
+        .y-axis-header {
+            background-color: var(--header-bg);
+            min-width: 130px;
+            font-weight: 700;
+            text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 11;
+            color: #334155;
+            box-shadow: 1px 0 0 var(--border-color);
+        }
+        
+        /* Ensure top-left header cell stays above everything */
+        th.y-axis-header {
+            z-index: 12;
+            box-shadow: 1px 1px 0 var(--border-color);
+        }
+
+        /* Timeline Years */
+        .year-header {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--accent-color);
+        }
+
+        .year-header.highlight-bg {
+            border-bottom: 3px solid var(--accent-color) !important;
+            background: #e0f2fe;
+            color: #0284c7;
+        }
+
+        .future-header {
+            color: var(--future-view);
+        }
+
+        /* Cell Styling */
+        .tech-node {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            color: var(--text-color);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+        }
+
+        .tech-node:last-child {
+            margin-bottom: 0;
+        }
+
+        .view-2023 {
+            border-left: 4px solid var(--old-view);
+        }
+
+        .view-2023::before {
+            content: "2023 VIEW";
+            font-size: 0.65rem;
+            display: inline-block;
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 3px 6px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .view-2026 {
+            border-left: 4px solid var(--new-view);
+            background: linear-gradient(to right, #f0f9ff 0%, #ffffff 100%);
+        }
+
+        .view-2026::before {
+            content: "2026 REALITY";
+            font-size: 0.65rem;
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0284c7;
+            padding: 3px 6px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .view-future {
+            border-left: 4px solid var(--future-view);
+            background: linear-gradient(to right, #fdf4ff 0%, #ffffff 100%);
+        }
+        
+        .view-future::before {
+            content: "FRONTIER";
+            font-size: 0.65rem;
+            display: inline-block;
+            background: #fae8ff;
+            color: #a21caf;
+            padding: 3px 6px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .gap-analysis {
+            font-size: 0.8rem;
+            color: var(--highlight);
+            margin-top: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: #fff1f2;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px dashed #fecdd3;
+        }
+
+        .sector-group {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            text-align: center;
+            background-color: var(--header-bg);
+            color: #64748b;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            padding: 20px 10px;
+            border-right: 1px solid var(--border-color);
+        }
+        
+        tr:last-child .sector-group {
+            border-bottom-left-radius: var(--table-radius);
+        }
+
+        .highlight-bg {
+            position: relative;
+        }
+
+        .update-badge {
+            background: linear-gradient(135deg, #f43f5e, #be123c);
+            color: #ffffff;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-left: 6px;
+            vertical-align: middle;
+            animation: pulse-light 2s infinite;
+            display: inline-block;
+            box-shadow: 0 0 8px rgba(244, 63, 94, 0.4);
+            letter-spacing: 0.05em;
+        }
+
+        @keyframes pulse-light {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 4px rgba(244, 63, 94, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px 5px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+            .legend {
+                flex-direction: row; /* Keep row for dot legends if possible, or tight wrap */
+                gap: 12px;
+                padding: 10px 12px;
+                font-size: 0.8rem;
+                justify-content: flex-start;
+            }
+            .roadmap-container {
+                min-width: 900px; /* Compress the table width */
+                font-size: 0.85rem;
+            }
+            th, td {
+                padding: 12px 10px;
+            }
+            th.year-header {
+                font-size: 1rem;
+            }
+            .tech-node {
+                padding: 10px;
+            }
+            /* y축 항목 좁게 만들기 */
+            .y-axis-header {
+                min-width: 75px; 
+                width: 75px;
+                padding: 10px 6px;
+                font-size: 0.8rem;
+                word-break: keep-all; 
+                line-height: 1.3;
+            }
+            .sector-group {
+                padding: 10px 5px;
+                font-size: 0.9rem;
+            }
+            .table-wrapper {
+                max-height: 80vh; /* 모바일에서 표 높이 확보 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>2033 Semiconductor Roadmap: Great Shift Extended</h1>
+    <div class="subtitle">Comparative Analysis: 2023 Outlook vs. 2026 Reality vs. 2033 Logic Expansion <br><strong
+            style="color:var(--highlight);">(최신 업데이트: 2026년 2월 동향 반영)</strong></div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="dot" style="background-color: var(--old-view);"></div>
+            <span>2023 View</span>
+        </div>
+        <div class="legend-item">
+            <div class="dot" style="background-color: var(--new-view);"></div>
+            <span>2026 Reality</span>
+        </div>
+        <div class="legend-item">
+            <div class="dot" style="background-color: var(--future-view);"></div>
+            <span>2031-2033 Frontier (AI & Quantum)</span>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+    <table class="roadmap-container">
+        <thead>
+            <tr>
+                <th colspan="2" style="background:transparent; border:none;"></th>
+                <th class="year-header">2023</th>
+                <th class="year-header">2024</th>
+                <th class="year-header">2025</th>
+                <th class="year-header highlight-bg" style="border-bottom: 2px solid cyan;">2026 (NOW)</th>
+                <th class="year-header">2027</th>
+                <th class="year-header">2028</th>
+                <th class="year-header">2029</th>
+                <th class="year-header">2030</th>
+                <th class="year-header future-header">2031</th>
+                <th class="year-header future-header">2032</th>
+                <th class="year-header future-header">2033</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Logic Sector -->
+            <tr>
+                <td rowspan="1" class="sector-group">LOGIC</td>
+                <td class="y-axis-header">Process & Architecture</td>
+                <td>
+                    <div class="tech-node view-2023">3nm FinFET (Yield Struggle)</div>
+                    <div class="tech-node view-2026">3nm Stable, AI Chip Explosion</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">3nm Optimized</div>
+                    <div class="tech-node view-2026">2nm Risk Production</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">2nm (GAA Intro)</div>
+                    <div class="tech-node view-2026">2nm Mass Prod (AI Driven)</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">2nm Mass Prod (TSMC/Sam) <span class="update-badge">UPDATED</span>
+                    </div>
+                    <div class="gap-analysis">▲ 1.4nm pushed to 2028+</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">2nm Maturity</div>
+                    <div class="tech-node view-2026">1.4nm (A14) Entry</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">1.4nm R&D</div>
+                    <div class="tech-node view-2026">1.4nm Mainstream</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Beyond Silicon?</div>
+                    <div class="tech-node view-2026">1nm / Stacked CFET Intro</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Concept Phase</div>
+                    <div class="tech-node view-2026">Sub-1nm Era</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">CFET Maturity</div>
+                    <div class="tech-node view-future">Automated Design (AI-EDA)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">0.7nm (7Å) Node</div>
+                    <div class="tech-node view-future">2D Materials (TMDs)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Quantum-Dot / Neuromorphic Hybrid</div>
+                    <div class="tech-node view-future">Post-Silicon Dominance</div>
+                </td>
+            </tr>
+
+            <!-- Memory Sector -->
+            <tr>
+                <td rowspan="3" class="sector-group">MEMORY</td>
+                <td class="y-axis-header">HBM (AI Backbone)</td>
+                <td>
+                    <div class="tech-node view-2023">HBM3 (Niche)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">HBM3E (Dominant)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">HBM3E Predicted</div>
+                    <div class="tech-node view-2026">HBM4 Sampling (16-Hi)</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">HBM4 Mass Prod (Q1-Q2) <span class="update-badge">HOT</span></div>
+                    <div class="gap-analysis">▲ HBM4E Early Sampling</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">HBM4 Planned</div>
+                    <div class="tech-node view-2026">HBM4E / Custom HBM</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">N/A</div>
+                    <div class="tech-node view-2026">HBM5 (24-Hi/32-Hi)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">N/A</div>
+                    <div class="tech-node view-2026">HBM5E</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">HBM Gen?</div>
+                    <div class="tech-node view-2026">HBM6 / Memory-Logic Fusion</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">HBM6E (Ultra-Low Power)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">HBM7 (Optical I/O Integ.)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">PIM-HBM Standard (Compute inside Memory)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="y-axis-header">DRAM (GDDR/LPDDR)</td>
+                <td>
+                    <div class="tech-node view-2023">LPDDR5X / GDDR6</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">LPCAMM2 (Module Revolution)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">LPDDR6 R&D</div>
+                    <div class="tech-node view-2026">GDDR7 Volume / LPDDR6</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">On-Device AI Memory</div>
+                    <div class="gap-analysis">▲ LLM on Edge</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Generic Evolution</div>
+                    <div class="tech-node view-2026">3D LPDDR (V-DRAM) Prototype</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">N/A</div>
+                    <div class="tech-node view-2026">3D DRAM Mass Prod</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">PIM (Processing-in-Mem)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Unified Memory Arch</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">3D DRAM Layer limit break</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Capacitor-less DRAM</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">MRAM/ReRAM Substitution start</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="y-axis-header">HBF (High-Bandwidth Flash)</td>
+                <td>
+                    <div class="tech-node view-2023">3D NAND (Storage)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">NVMe / CXL Memory Expand</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">HBF Concept / R&D</div>
+                    <div class="tech-node view-2026">Stacked NAND I/O Ramp</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">HBF Trial (SK hynix / Sandisk)</div>
+                    <div class="gap-analysis">▲ 1.6 TB/s, 512GB stack</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">HBF Commercial (AI Inference)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">HBF Volume / 400+ Layer NAND</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">HBF Next Gen (Bandwidth ↑)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">HBF Ecosystem (Standard)</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">HBF Maturity / HBM Co-Pack</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Non-Volatile AI Memory Arch</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Memory-Storage Fusion (HBF Gen?)</div>
+                </td>
+            </tr>
+
+            <!-- Packaging Sector -->
+            <tr>
+                <td rowspan="2" class="sector-group">PKG</td>
+                <td class="y-axis-header">Interposer (2.5D/3D)</td>
+                <td>
+                    <div class="tech-node view-2023">CoWoS Shortage</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">CoWoS-L / RDL Interposer</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Si-Interposer</div>
+                    <div class="tech-node view-2026">Panel-Level Pkg (PLP)</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">3D SoIC (Bumpless)</div>
+                    <div class="gap-analysis">▲ Hybrid Bonding</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Micro-bump</div>
+                    <div class="tech-node view-2026">Multi-Die 3D Stacking</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Active Interposer</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Photonics (CPO) Integ.</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Heterogeneous?</div>
+                    <div class="tech-node view-2026">System-on-Package (SoP)</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">CPO (Co-Packaged Optics) Mainstream</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">All-Optical Interconnect</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Wafer-Scale Integration (Standard)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="y-axis-header">Substrate (Game Changer)</td>
+                <td>
+                    <div class="tech-node view-2023">FC-BGA</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Fine-Pitch Organic</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">ABF Dominance</div>
+                    <div class="tech-node view-2026">Glass Core Pilot Lines</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">Glass Substrate Comm. Start <span class="update-badge">HOT</span>
+                    </div>
+                    <div class="gap-analysis">▲ T-Glass Bottleneck Expected</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Glass R&D</div>
+                    <div class="tech-node view-2026">Glass Substrate Mass Prod</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Glass Ecosystem Boom</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">100x100mm+ Panel</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Unknown</div>
+                    <div class="tech-node view-2026">Total Transition to Glass (AI)</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">Glass Interposer Fusion</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Active Glass Substrate</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Beyond Glass (Ceramic/Diamond?)</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+</body>
+
+</html>
