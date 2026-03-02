@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2033 Semiconductor Mega-Trend Roadmap: Great Shift Extended</title>
+    <style>
+        :root {
+            --bg-color: #0f111a;
+            --text-color: #e6e6e6;
+            --accent-color: #00e5ff;
+            --secondary-color: #7c4dff;
+            --header-bg: #1a1e2e;
+            --row-bg: #141724;
+            --border-color: #2a2e45;
+            --old-view: #546e7a;
+            /* 2023 Perspective Color */
+            --new-view: #00e5ff;
+            /* 2026 Perspective Color */
+            --future-view: #ff00ff;
+            /* 2030+ Speculative View */
+            --highlight: #ff0055;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            overflow-x: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00e5ff, #7c4dff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8892b0;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 0.85em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .roadmap-container {
+            width: 100%;
+            min-width: 1800px;
+            /* Extended Width */
+            border-collapse: collapse;
+            font-size: 0.8em;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--header-bg);
+            padding: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .y-axis-header {
+            background-color: #1f243a;
+            width: 150px;
+            font-weight: 700;
+            text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 11;
+        }
+
+        .sub-header {
+            background-color: #1a1e2e;
+            padding-left: 20px;
+            font-style: italic;
+            color: #aeb4c7;
+            font-weight: 500;
+        }
+
+        /* Timeline Years */
+        .year-header {
+            text-align: center;
+            font-size: 1.1em;
+            color: var(--accent-color);
+        }
+
+        .future-header {
+            color: var(--future-view);
+        }
+
+        /* Cell Styling */
+        .tech-node {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            padding: 8px;
+            margin-bottom: 6px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .tech-node:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-2px);
+        }
+
+        .view-2023 {
+            border-left: 3px solid var(--old-view);
+            color: #b0bec5;
+        }
+
+        .view-2023::before {
+            content: "2023 VIEW";
+            font-size: 0.6em;
+            display: block;
+            color: var(--old-view);
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .view-2026 {
+            border-left: 3px solid var(--new-view);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.05);
+        }
+
+        .view-2026::before {
+            content: "2026 REALITY";
+            font-size: 0.6em;
+            display: block;
+            color: var(--new-view);
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .view-future {
+            border-left: 3px solid var(--future-view);
+            background: rgba(255, 0, 255, 0.05);
+        }
+
+        .gap-analysis {
+            font-size: 0.75em;
+            color: var(--highlight);
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .sector-group {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            text-align: center;
+            background-color: #0d0f16;
+            color: #64748b;
+            font-weight: 900;
+            border: none;
+            width: 40px;
+        }
+
+        /* Specific Highlights based on Persona's Analysis */
+        .highlight-bg {
+            background: linear-gradient(135deg, rgba(124, 77, 255, 0.1), rgba(0, 229, 255, 0.05));
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>2033 Semiconductor Roadmap: Great Shift Extended</h1>
+    <div class="subtitle">Comparative Analysis: 2023 Outlook vs. 2026 Reality vs. 2033 Logic Expansion</div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="dot" style="background-color: var(--old-view);"></div>
+            <span>2023 View</span>
+        </div>
+        <div class="legend-item">
+            <div class="dot" style="background-color: var(--new-view);"></div>
+            <span>2026 Reality</span>
+        </div>
+        <div class="legend-item">
+            <div class="dot" style="background-color: var(--future-view);"></div>
+            <span>2031-2033 Frontier (AI & Quantum)</span>
+        </div>
+    </div>
+
+    <table class="roadmap-container">
+        <thead>
+            <tr>
+                <th colspan="2" style="background:transparent; border:none;"></th>
+                <th class="year-header">2023</th>
+                <th class="year-header">2024</th>
+                <th class="year-header">2025</th>
+                <th class="year-header highlight-bg" style="border-bottom: 2px solid cyan;">2026 (NOW)</th>
+                <th class="year-header">2027</th>
+                <th class="year-header">2028</th>
+                <th class="year-header">2029</th>
+                <th class="year-header">2030</th>
+                <th class="year-header future-header">2031</th>
+                <th class="year-header future-header">2032</th>
+                <th class="year-header future-header">2033</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Logic Sector -->
+            <tr>
+                <td rowspan="1" class="sector-group">LOGIC</td>
+                <td class="y-axis-header">Process & Architecture</td>
+                <td>
+                    <div class="tech-node view-2023">3nm FinFET (Yield Struggle)</div>
+                    <div class="tech-node view-2026">3nm Stable, AI Chip Explosion</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">3nm Optimized</div>
+                    <div class="tech-node view-2026">2nm Risk Production</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">2nm (GAA Intro)</div>
+                    <div class="tech-node view-2026">2nm Mass Prod (AI Driven)</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">BSPDN Intro / 1.6nm Roadmapped</div>
+                    <div class="gap-analysis">▲ Power Delivery Critical</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">2nm Maturity</div>
+                    <div class="tech-node view-2026">1.4nm (A14) Entry</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">1.4nm R&D</div>
+                    <div class="tech-node view-2026">1.4nm Mainstream</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Beyond Silicon?</div>
+                    <div class="tech-node view-2026">1nm / Stacked CFET Intro</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Concept Phase</div>
+                    <div class="tech-node view-2026">Sub-1nm Era</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">CFET Maturity</div>
+                    <div class="tech-node view-future">Automated Design (AI-EDA)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">0.7nm (7Å) Node</div>
+                    <div class="tech-node view-future">2D Materials (TMDs)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Quantum-Dot / Neuromorphic Hybrid</div>
+                    <div class="tech-node view-future">Post-Silicon Dominance</div>
+                </td>
+            </tr>
+
+            <!-- Memory Sector -->
+            <tr>
+                <td rowspan="3" class="sector-group">MEMORY</td>
+                <td class="y-axis-header">HBM (AI Backbone)</td>
+                <td>
+                    <div class="tech-node view-2023">HBM3 (Niche)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">HBM3E (Dominant)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">HBM3E Predicted</div>
+                    <div class="tech-node view-2026">HBM4 Sampling (16-Hi)</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">HBM4 Mass Prod (Hybrid Bonding)</div>
+                    <div class="gap-analysis">▲ Accelerated 2yrs</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">HBM4 Planned</div>
+                    <div class="tech-node view-2026">HBM4E / Custom HBM</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">N/A</div>
+                    <div class="tech-node view-2026">HBM5 (24-Hi/32-Hi)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">N/A</div>
+                    <div class="tech-node view-2026">HBM5E</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">HBM Gen?</div>
+                    <div class="tech-node view-2026">HBM6 / Memory-Logic Fusion</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">HBM6E (Ultra-Low Power)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">HBM7 (Optical I/O Integ.)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">PIM-HBM Standard (Compute inside Memory)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="y-axis-header">DRAM (GDDR/LPDDR)</td>
+                <td>
+                    <div class="tech-node view-2023">LPDDR5X / GDDR6</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">LPCAMM2 (Module Revolution)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">LPDDR6 R&D</div>
+                    <div class="tech-node view-2026">GDDR7 Volume / LPDDR6</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">On-Device AI Memory</div>
+                    <div class="gap-analysis">▲ LLM on Edge</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Generic Evolution</div>
+                    <div class="tech-node view-2026">3D LPDDR (V-DRAM) Prototype</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">N/A</div>
+                    <div class="tech-node view-2026">3D DRAM Mass Prod</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">PIM (Processing-in-Mem)</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Unified Memory Arch</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">3D DRAM Layer limit break</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Capacitor-less DRAM</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">MRAM/ReRAM Substitution start</div>
+                </td>
+            </tr>
+
+            <!-- Packaging Sector -->
+            <tr>
+                <td rowspan="2" class="sector-group">PKG</td>
+                <td class="y-axis-header">Interposer (2.5D/3D)</td>
+                <td>
+                    <div class="tech-node view-2023">CoWoS Shortage</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">CoWoS-L / RDL Interposer</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Si-Interposer</div>
+                    <div class="tech-node view-2026">Panel-Level Pkg (PLP)</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">3D SoIC (Bumpless)</div>
+                    <div class="gap-analysis">▲ Hybrid Bonding</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Micro-bump</div>
+                    <div class="tech-node view-2026">Multi-Die 3D Stacking</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Active Interposer</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Photonics (CPO) Integ.</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Heterogeneous?</div>
+                    <div class="tech-node view-2026">System-on-Package (SoP)</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">CPO (Co-Packaged Optics) Mainstream</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">All-Optical Interconnect</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Wafer-Scale Integration (Standard)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="y-axis-header">Substrate (Game Changer)</td>
+                <td>
+                    <div class="tech-node view-2023">FC-BGA</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Fine-Pitch Organic</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">ABF Dominance</div>
+                    <div class="tech-node view-2026">Glass Core Pilot Lines</div>
+                </td>
+                <td class="highlight-bg">
+                    <div class="tech-node view-2026">Glass Substrate Validated</div>
+                    <div class="gap-analysis">▲ Commercial Start!</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Glass R&D</div>
+                    <div class="tech-node view-2026">Glass Substrate Mass Prod</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">Glass Ecosystem Boom</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2026">100x100mm+ Panel</div>
+                </td>
+                <td>
+                    <div class="tech-node view-2023">Unknown</div>
+                    <div class="tech-node view-2026">Total Transition to Glass (AI)</div>
+                </td>
+                <!-- 2031-2033 -->
+                <td>
+                    <div class="tech-node view-future">Glass Interposer Fusion</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Active Glass Substrate</div>
+                </td>
+                <td>
+                    <div class="tech-node view-future">Beyond Glass (Ceramic/Diamond?)</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
